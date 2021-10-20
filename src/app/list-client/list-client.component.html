@@ -1,0 +1,33 @@
+<h1 class="text-center text-info mb-5" style="text-transform: capitalize;" >list clients page</h1>
+<div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+              <table class="table table-dark table-striped">
+                <tr>
+                  <td>id</td>
+                  <td>name</td>
+                  <td>position</td>
+                  <td>profile</td>
+                  <td>control</td>
+                </tr>
+                <tr *ngFor="let client of allData">
+                 <td>{{client.id}}</td>
+                 <td>{{client.name}}</td>
+                 <td>{{client.position}}</td>
+                 <td><img [src]="client.imgUrl" style="width: 50px; height: 50px;" alt=""></td>
+                 <td><a routerLink="/updateC/{{client.id}}"  class="btn btn-info">Edit</a></td>
+                 <td><button (click)="remove(client.id)" class="btn btn-danger">Delete</button></td>
+                </tr>
+              </table>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+  </div>
+</div>
